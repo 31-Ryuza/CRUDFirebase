@@ -11,13 +11,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tambah : FloatingActionButton
     private lateinit var listDnt : ListView
     private lateinit var ref : DatabaseReference
-    private lateinit var dntlist : MutableList<Donat>
+    private lateinit var dntlist : MutableList<Kelas>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ref = FirebaseDatabase.getInstance().getReference("pesanan")
+        ref = FirebaseDatabase.getInstance().getReference("data_siswa")
 
         tambah = findViewById(R.id.btn_tambah)
 
@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
                 if (snapshot.exists()){
                     dntlist.clear()
                     for (h in snapshot.children){
-                        val donat = h.getValue(Donat::class.java)
-                        if (donat != null){
-                            dntlist.add(donat)
+                        val siswa = h.getValue(Kelas::class.java)
+                        if (siswa != null){
+                            dntlist.add(siswa)
                         }
                     }
-                    val adapter = DonatAdapter(this@MainActivity, R.layout.item_donat, dntlist)
+                    val adapter = SiswaAdapter(this@MainActivity, R.layout.item_siswa, dntlist)
                     listDnt.adapter = adapter
                 }
             }

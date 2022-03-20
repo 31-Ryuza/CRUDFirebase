@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,14 +14,17 @@
         android:layout_marginRight="15dp"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/et_nama"
+    <TextView
+        android:id="@+id/vw_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
-        android:hint="Masukkan Nama"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:hint="Nama"
         android:importantForAutofill="no"/>
 
     <TextView
@@ -30,17 +32,21 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
         android:text="Alamat"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/et_alamat"
+    <TextView
+        android:id="@+id/vw_alamat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
-        android:hint="Masukkan Alamat"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:hint="Alamat"
         android:importantForAutofill="no"/>
 
     <TextView
@@ -48,17 +54,21 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
         android:text="Email"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/et_email"
+    <TextView
+        android:id="@+id/vw_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
-        android:hint="Masukkan Alamat"
+        android:hint="Email"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="15dp"
         android:importantForAutofill="no"/>
 
     <TextView
@@ -66,40 +76,22 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
         android:text="Jurusan"
+        android:layout_marginBottom="10dp"
         android:textSize="20dp"/>
 
-    <RadioGroup
+    <TextView
+        android:id="@+id/vw_jurusan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-        <RadioButton
-            android:id="@+id/rb_tkj"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="TKJ"
-            />
-        <RadioButton
-            android:id="@+id/rb_tja"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="TJA"
-            />
-        <RadioButton
-            android:id="@+id/rb_rpl"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="RPL"
-            />
-    </RadioGroup>
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Jurusan"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:importantForAutofill="no"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -108,37 +100,19 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
         android:text="Kelas"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp"/>
 
-    <RadioGroup
+    <TextView
+        android:id="@+id/vw_kelas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-        <RadioButton
-            android:id="@+id/rb_10"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="10"
-            />
-        <RadioButton
-            android:id="@+id/rb_11"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="11"
-            />
-        <RadioButton
-            android:id="@+id/rb_12"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:text="12"
-            />
-    </RadioGroup>
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:hint="Kelas"
+        android:importantForAutofill="no"/>
+
 </LinearLayout>

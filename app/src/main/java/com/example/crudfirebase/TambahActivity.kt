@@ -9,11 +9,13 @@ import com.google.firebase.database.FirebaseDatabase
 class TambahActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etnama : EditText
     private lateinit var etalamat : EditText
-    private lateinit var rbbiasa : RadioButton
-    private lateinit var rbmini : RadioButton
-    private lateinit var cbkacang : CheckBox
-    private lateinit var cbseres : CheckBox
-    private lateinit var cbselai : CheckBox
+    private lateinit var etemail : EditText
+    private lateinit var rbtkj : RadioButton
+    private lateinit var rbtja : RadioButton
+    private lateinit var rbrpl : RadioButton
+    private lateinit var rb10 : RadioButton
+    private lateinit var rb11 : RadioButton
+    private lateinit var rb12 : RadioButton
     private lateinit var btnsimpan : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,49 +24,46 @@ class TambahActivity : AppCompatActivity(), View.OnClickListener {
 
         etnama = findViewById(R.id.et_nama)
         etalamat = findViewById(R.id.et_alamat)
-        rbbiasa = findViewById(R.id.rb_biasa)
-        rbmini = findViewById(R.id.rb_mini)
-        cbkacang = findViewById(R.id.cb_kacang)
-        cbseres = findViewById(R.id.cb_seres)
-        cbselai = findViewById(R.id.cb_selai)
+        etemail = findViewById(R.id.et_email)
+        rbtkj = findViewById(R.id.rb_tkj)
+        rbtja = findViewById(R.id.rb_tja)
+        rbrpl = findViewById(R.id.rb_rpl)
+        rb10 = findViewById(R.id.rb_10)
+        rb11 = findViewById(R.id.rb_11)
+        rb12 = findViewById(R.id.rb_12)
         btnsimpan = findViewById(R.id.btn_simpan)
 
         btnsimpan.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        var biasa : String = ""
-        var mini : String = ""
-        var kacang : String = ""
-        var selai : String = ""
-        var seres : String = ""
+        var tkj : String = ""
+        var tja : String = ""
+        var rpl : String = ""
+        var sepuluh : String = ""
+        var sebelas : String = ""
+        var duabelas : String = ""
 
         val nama = etnama.text.toString().trim()
         val alamat = etalamat.text.toString().trim()
+        val email = etemail.text.toString().trim()
 
-        if (rbbiasa.isChecked){
-            biasa = rbbiasa.text.toString().trim()
-        }else if (rbmini.isChecked){
-            mini = rbmini.text.toString().trim()
+        if (rbtkj.isChecked){
+            tkj = rbtkj.text.toString().trim()
+        }else if (rbtja.isChecked){
+            tja = rbtja.text.toString().trim()
+        }else if (rbrpl.isChecked){
+            rpl = rbrpl.text.toString().trim()
         }
 
-        if (cbkacang.isChecked){
-            kacang = cbkacang.text.toString().trim()
-        }else{
-            kacang = ""
+        if (rb10.isChecked){
+            sepuluh = rb10.text.toString().trim()
+        }else if (rb11.isChecked){
+            sebelas = rb11.text.toString().trim()
+        }else if (rb12.isChecked){
+            duabelas = rb12.text.toString().trim()
         }
 
-        if (cbselai.isChecked){
-            selai = cbselai.text.toString().trim()
-        }else{
-            selai = ""
-        }
-
-        if (cbseres.isChecked){
-            seres = cbseres.text.toString().trim()
-        }else{
-            seres = ""
-        }
 
         if (nama.isEmpty()){
             etnama.error = "Nama anda harus diisi"
@@ -76,11 +75,16 @@ class TambahActivity : AppCompatActivity(), View.OnClickListener {
             return
         }
 
-        val ref = FirebaseDatabase.getInstance().getReference("pesanan")
+        if (email.isEmpty()){
+            etemail.error = "Email anda harus diisi"
+            return
+        }
+
+        val ref = FirebaseDatabase.getInstance().getReference("data_siswa")
 
         val pesanId = ref.push().key
 
-        val dnt = Donat(pesanId,nama,alamat,biasa+mini,kacang+" "+seres+" "+selai+"")
+        val dnt = Kelas(pesanId,nama,alamat,email,tkj+tja+rpl,sepuluh+sebelas+duabelas)
 
         if (pesanId != null) {
             ref.child(pesanId).setValue(dnt).addOnCompleteListener{
@@ -93,10 +97,12 @@ class TambahActivity : AppCompatActivity(), View.OnClickListener {
     private fun clearText() {
         etnama.setText("")
         etalamat.setText("")
-        rbbiasa.isChecked = false
-        rbmini.isChecked = false
-        cbseres.isChecked = false
-        cbselai.isChecked = false
-        cbkacang.isChecked = false
+        etemail.setText("")
+        rbtkj.isChecked = false
+        rbtja.isChecked = false
+        rbrpl.isChecked = false
+        rb10.isChecked = false
+        rb11.isChecked = false
+        rb12.isChecked = false
     }
 }

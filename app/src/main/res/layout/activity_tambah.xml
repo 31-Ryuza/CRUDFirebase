@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:text="Nama Pemesan"
+        android:text="Nama Siswa"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="15dp"
         android:textSize="20dp"/>
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="Alamat Memesan"
+        android:text="Alamat"
         android:textSize="20dp"/>
 
     <EditText
@@ -50,8 +50,27 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:text="Email"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
-        android:text="Jenis Donat"
+        android:hint="Masukkan Alamat"
+        android:importantForAutofill="no"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="Jurusan"
         android:textSize="20dp"/>
 
     <RadioGroup
@@ -59,20 +78,28 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp">
         <RadioButton
-            android:id="@+id/rb_biasa"
+            android:id="@+id/rb_tkj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
-            android:text="Donat Biasa"
+            android:text="TKJ"
             />
         <RadioButton
-            android:id="@+id/rb_mini"
+            android:id="@+id/rb_tja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
-            android:text="Donat Mini"
+            android:text="TJA"
+            />
+        <RadioButton
+            android:id="@+id/rb_rpl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="RPL"
             />
     </RadioGroup>
 
@@ -82,31 +109,39 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
-        android:text="Topping"
+        android:text="Kelas"
         android:textSize="20dp"
         />
 
-    <CheckBox
-        android:id="@+id/cb_kacang"
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="Kacang"/>
-    <CheckBox
-        android:id="@+id/cb_seres"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="Seres"/>
-    <CheckBox
-        android:id="@+id/cb_selai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="Selai"/>
+        android:layout_marginBottom="10dp">
+        <RadioButton
+            android:id="@+id/rb_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="10"
+            />
+        <RadioButton
+            android:id="@+id/rb_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="11"
+            />
+        <RadioButton
+            android:id="@+id/rb_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="12"
+            />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_simpan"
